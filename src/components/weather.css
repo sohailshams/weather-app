@@ -1,0 +1,13 @@
+.weather {
+  text-align: center;
+}
+.weather__heading {
+  color: white;
+  padding-left: 20px;
+}
+
+.weather__temp {
+  color: white;
+  font-size: 60px;
+  padding-left: 20px;
+}

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './weather.css';
 
 const options = {
   method: 'GET',
   url: 'https://community-open-weather-map.p.rapidapi.com/weather',
   params: {
-    q: 'Glasgow,uk',
+    q: 'London',
     units: 'metric',
   },
   headers: {
@@ -27,11 +28,10 @@ function Weather() {
   }, []);
   console.log(weatherInfo);
   return (
-    <div>
-      <h2>{weatherInfo?.name}</h2>
-      <h2>
-        {weatherInfo?.weather[0].main}, {weatherInfo?.weather[0].description}
-      </h2>
+    <div className="weather">
+      <h2 className="weather__heading">{weatherInfo?.name}</h2>
+      <h2 className="weather__temp">{weatherInfo?.main.temp}</h2>
+      <h2 className="weather__heading">{weatherInfo?.weather[0].main}</h2>
     </div>
   );
 }
